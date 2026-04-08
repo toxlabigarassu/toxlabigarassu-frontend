@@ -1,0 +1,42 @@
+<section class="exam-section" id="exames">
+  <div class="container exam-grid">
+    <div class="section-heading">
+      <span class="eyebrow">Sobre o laboratório</span>
+      <h2>Exame toxicológico com atendimento claro e direto.</h2>
+      <p>Para habilitados C, D e E, concursos públicos e empresas.</p>
+    </div>
+
+    <div class="exam-panel">
+      <div class="exam-list">
+        @for (highlight of highlights; track highlight) {
+          <div class="exam-item">
+            <div class="exam-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12.5 9.5 17 19 7.5" />
+              </svg>
+            </div>
+            <p>{{ highlight }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="payment-card">
+        <h3>Cartões de crédito aceitos</h3>
+        <div class="payment-tags">
+          <img
+            src="assets/img/payments.png"
+            alt="Meios de pagamentos aceitos"
+          />
+        </div>
+      </div>
+      <a
+        class="primary-button"
+        [href]="whatsappLink"
+        target="_blank"
+        rel="noopener"
+      >
+        Solicitar atendimento
+      </a>
+    </div>
+  </div>
+</section>

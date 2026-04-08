@@ -1,0 +1,46 @@
+<div class="page-shell">
+  <app-site-header
+    [title]="company.title"
+    [subtitle]="company.subtitle"
+    [navItems]="template.navigation"
+    [whatsappLink]="company.whatsappLink"
+  />
+
+  <main>
+    <app-hero-carousel
+      [slides]="template.heroSlides"
+      [whatsappLink]="company.whatsappLink"
+    />
+    <!-- <app-feature-cards [cards]="template.featureCards" /> -->
+    <app-law-cards [cards]="template.lawCards" />
+    <app-exam-highlights
+      [highlights]="template.examHighlights"
+      [whatsappLink]="company.whatsappLink"
+    />
+    <app-location-section
+      [whatsappLink]="company.whatsappLink"
+      [mapEmbedUrl]="company.mapEmbedUrl"
+    />
+  </main>
+
+  <app-site-footer
+    [title]="company.title"
+    [subtitle]="company.subtitle"
+    [phone]="company.phone"
+    [email]="company.email"
+    [instagramHandle]="company.instagramHandle"
+    [instagramLink]="company.instagramLink"
+    [whatsappLink]="company.whatsappLink"
+    [businessHours]="company.businessHours"
+    [addressLines]="company.addressLines"
+  />
+
+  <a
+    class="floating-cta"
+    [href]="company.whatsappLink"
+    target="_blank"
+    rel="noopener"
+  >
+    WhatsApp
+  </a>
+</div>

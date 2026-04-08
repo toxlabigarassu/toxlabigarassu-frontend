@@ -1,0 +1,49 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#inicio" (click)="closeMobileMenu()">
+      <img src="assets/img/logo.png" alt="Logomarca da Toxlab Igarassu" />
+      <div class="brand-copy">
+        <strong>{{ title }}</strong>
+        <span>{{ subtitle }}</span>
+      </div>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      @for (item of navItems; track item.href) {
+        <a [href]="item.href">{{ item.label }}</a>
+      }
+    </nav>
+
+    <a class="header-cta" [href]="whatsappLink" target="_blank" rel="noopener">
+      Preço Promocional
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      [attr.aria-expanded]="isMobileMenuOpen"
+      aria-label="Abrir menu"
+      (click)="toggleMobileMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" [class.mobile-nav--open]="isMobileMenuOpen">
+    <nav class="mobile-nav-links" aria-label="Navegação mobile">
+      @for (item of navItems; track item.href) {
+        <a [href]="item.href" (click)="closeMobileMenu()">{{ item.label }}</a>
+      }
+      <a
+        [href]="whatsappLink"
+        target="_blank"
+        rel="noopener"
+        (click)="closeMobileMenu()"
+      >
+        Falar no WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>

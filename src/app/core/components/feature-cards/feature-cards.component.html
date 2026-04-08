@@ -1,0 +1,32 @@
+<section class="feature-section">
+  <div class="container feature-grid">
+    @for (card of cards; track card.title) {
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          @switch ($index) {
+            @case (0) {
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4Z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            }
+            @case (1) {
+              <svg viewBox="0 0 24 24">
+                <path d="M12 4v8l5 3" />
+                <circle cx="12" cy="12" r="8" />
+              </svg>
+            }
+            @default {
+              <svg viewBox="0 0 24 24">
+                <path d="M4 12c2-4 5-6 8-6s6 2 8 6c-2 4-5 6-8 6s-6-2-8-6Z" />
+                <circle cx="12" cy="12" r="2.5" />
+              </svg>
+            }
+          }
+        </div>
+        <h2>{{ card.title }}</h2>
+        <p>{{ card.description }}</p>
+      </article>
+    }
+  </div>
+</section>

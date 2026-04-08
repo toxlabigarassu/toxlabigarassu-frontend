@@ -1,0 +1,22 @@
+<section class="law-section" id="lei">
+  <div class="container law-grid">
+    <div class="section-heading">
+      <span class="eyebrow">Nova Lei 14.071/20 sobre Exame toxicológico</span>
+      <h2>Condutores C, D e E precisam acompanhar os prazos do exame.</h2>
+    </div>
+
+    <div class="law-panel">
+      @for (card of cards; track card.title) {
+        <article class="law-card">
+          <div class="law-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3 5 6v5c0 4.5 2.8 8 7 10 4.2-2 7-5.5 7-10V6l-7-3Z" />
+            </svg>
+          </div>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

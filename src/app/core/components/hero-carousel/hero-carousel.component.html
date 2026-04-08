@@ -1,0 +1,82 @@
+<section class="hero-section" id="inicio">
+  <div class="hero-backdrop" aria-hidden="true">
+    <div class="hero-glow hero-glow--one"></div>
+    <div class="hero-glow hero-glow--two"></div>
+  </div>
+
+  <div class="hero-panel">
+    <article
+      class="carousel-card"
+      aria-label="Carrossel de públicos principais"
+    >
+      <button
+        class="carousel-arrow carousel-arrow--left"
+        type="button"
+        aria-label="Slide anterior"
+        (click)="previousSlide()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 6 9 12l6 6" />
+        </svg>
+      </button>
+
+      <button
+        class="carousel-arrow carousel-arrow--right"
+        type="button"
+        aria-label="Próximo slide"
+        (click)="nextSlide()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m9 6 6 6-6 6" />
+        </svg>
+      </button>
+
+      <div class="carousel-status">
+        <span>{{ slides[currentSlide].eyebrow }}</span>
+      </div>
+
+      <div class="carousel-content">
+        <h1>{{ slides[currentSlide].title }}</h1>
+        <p class="hero-description">
+          {{ slides[currentSlide].description }}
+        </p>
+      </div>
+
+      <div class="carousel-stats">
+        @for (stat of slides[currentSlide].stats; track stat) {
+          <span>{{ stat }}</span>
+        }
+      </div>
+
+      <div class="carousel-dots">
+        @for (slide of slides; track slide.title; let i = $index) {
+          <button
+            type="button"
+            [class.is-active]="i === currentSlide"
+            [attr.aria-label]="'Ir para slide ' + (i + 1)"
+            (click)="selectSlide(i)"
+          ></button>
+        }
+      </div>
+    </article>
+
+    <div class="hero-actions">
+      <a
+        class="primary-button"
+        [href]="whatsappLink"
+        target="_blank"
+        rel="noopener"
+      >
+        Garantir Preço Promocional
+      </a>
+      <a
+        class="secondary-button"
+        [href]="whatsappLink"
+        target="_blank"
+        rel="noopener"
+      >
+        Falar sobre meu exame
+      </a>
+    </div>
+  </div>
+</section>

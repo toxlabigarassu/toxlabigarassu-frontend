@@ -1,0 +1,44 @@
+<footer class="site-footer" id="contato">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/img/logo.png" alt="Logomarca da Toxlab Igarassu" />
+      <p>{{ subtitle }}</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contato</h3>
+      <a class="contact-link" [href]="whatsappLink" target="_blank" rel="noopener">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6 19l1.2-3A7 7 0 1 1 19 12a7 7 0 0 1-10 6.2L6 19Z" /></svg>
+        </span>
+        <span>{{ phone }}</span>
+      </a>
+      <a class="contact-link" [href]="'mailto:' + email">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z" /><path d="m5 8 7 5 7-5" /></svg>
+        </span>
+        <span>{{ email }}</span>
+      </a>
+      <a class="contact-link" [href]="instagramLink" target="_blank" rel="noopener">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3.2" /><circle cx="16.5" cy="7.5" r="1" /></svg>
+        </span>
+        <span>{{ instagramHandle }}</span>
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Funcionamento</h3>
+      @for (item of businessHours; track item) {
+        <p>{{ item }}</p>
+      }
+    </div>
+
+    <div class="footer-column">
+      <h3>Endereço</h3>
+      @for (line of addressLines; track line) {
+        <p>{{ line }}</p>
+      }
+    </div>
+  </div>
+</footer>

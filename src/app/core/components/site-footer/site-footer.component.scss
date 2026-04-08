@@ -1,0 +1,65 @@
+.footer-grid {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem 6rem;
+  width: 100%;
+  background: linear-gradient(135deg, #07153a 0%, #0b2456 100%);
+  box-shadow: 0 18px 50px rgba(5, 26, 72, 0.08);
+}
+
+.footer-brand,
+.footer-column {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.footer-brand img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.footer-column h3 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-display);
+}
+
+.footer-brand p,
+.footer-column p,
+.footer-column a,
+.contact-link {
+  margin: 0;
+  color: rgba(228, 239, 255, 0.78);
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.contact-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke: #8fd8ff;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (max-width: 768px) {
+  .footer-grid {
+    justify-content: center;
+  }
+}

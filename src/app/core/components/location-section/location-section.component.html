@@ -1,0 +1,21 @@
+<section class="location-section" id="localizacao">
+  <div class="container location-grid">
+    <div class="section-heading">
+      <span class="eyebrow">Localização</span>
+      <h2>Fácil de achar, fácil de chamar.</h2>
+      <p>Av. Duarte Coelho n 130 sala 04, em frente ao Shopping Igarassu.</p>
+      <a class="secondary-button" [href]="whatsappLink" target="_blank" rel="noopener">
+        Pedir orientação no WhatsApp
+      </a>
+    </div>
+
+    <div class="map-card">
+      <iframe
+        title="Mapa da Toxlab Igarassu"
+        [src]="safeMapEmbedUrl"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
