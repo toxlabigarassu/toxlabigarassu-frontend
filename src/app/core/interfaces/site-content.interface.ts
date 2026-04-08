@@ -13,6 +13,7 @@ export interface HeroSlide {
 export interface FeatureCard {
   title: string;
   description: string;
+  imageUrl: string;
 }
 
 export interface LawCard {

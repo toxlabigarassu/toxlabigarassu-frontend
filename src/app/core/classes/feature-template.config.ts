@@ -3,17 +3,15 @@ import { FeatureCard } from '../interfaces/site-content.interface';
 export class FeatureTemplateConfig {
   static readonly cards: FeatureCard[] = [
     {
-      title: 'Preço Promocional em destaque',
-      description: 'Todos os botões levam direto para o WhatsApp.',
-    },
-    {
-      title: 'Entrega com agilidade',
+      title: 'Credenciamento DETRAN - PE',
       description:
-        'Menor prazo para entrega entre os diferenciais do laboratório.',
+        'Somos laboratório credenciado pelo DETRAN de Pernambuco para exames toxicológicos.',
+      imageUrl: 'assets/img/detran-logo.png',
     },
     {
-      title: 'Atendimento confiável',
-      description: 'Comunicação clara para CNH, concursos e empresas.',
+      title: 'Credenciamento Sodré',
+      description: 'Somos laboratório credenciado pela Sodré Toxicológicos.',
+      imageUrl: 'assets/img/sodre-logo.png',
     },
   ];
 }

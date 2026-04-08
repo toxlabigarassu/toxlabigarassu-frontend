@@ -8,6 +8,12 @@
     <article
       class="carousel-card"
       aria-label="Carrossel de públicos principais"
+      [class.is-dragging]="dragOffset !== 0"
+      (pointerdown)="onPointerDown($event)"
+      (pointermove)="onPointerMove($event)"
+      (pointerup)="onPointerUp($event)"
+      (pointerleave)="onPointerCancel()"
+      (pointercancel)="onPointerCancel()"
     >
       <button
         class="carousel-arrow carousel-arrow--left"
@@ -31,21 +37,36 @@
         </svg>
       </button>
 
-      <div class="carousel-status">
-        <span>{{ slides[currentSlide].eyebrow }}</span>
-      </div>
+      <div class="viewport">
+        <div
+          class="carousel-body"
+          [class.carousel-body--transition]="
+            isTrackTransitionEnabled && !isDragging
+          "
+          [style.transform]="trackTransform"
+          (transitionend)="onTrackTransitionEnd()"
+        >
+          @for (slide of renderedSlides; track $index) {
+            <section class="carousel-slide" aria-roledescription="slide">
+              <div class="carousel-status">
+                <span>{{ slide.eyebrow }}</span>
+              </div>
 
-      <div class="carousel-content">
-        <h1>{{ slides[currentSlide].title }}</h1>
-        <p class="hero-description">
-          {{ slides[currentSlide].description }}
-        </p>
-      </div>
+              <div class="carousel-content">
+                <h1>{{ slide.title }}</h1>
+                <p class="hero-description">
+                  {{ slide.description }}
+                </p>
+              </div>
 
-      <div class="carousel-stats">
-        @for (stat of slides[currentSlide].stats; track stat) {
-          <span>{{ stat }}</span>
-        }
+              <div class="carousel-stats">
+                @for (stat of slide.stats; track stat) {
+                  <span>{{ stat }}</span>
+                }
+              </div>
+            </section>
+          }
+        </div>
       </div>
 
       <div class="carousel-dots">
