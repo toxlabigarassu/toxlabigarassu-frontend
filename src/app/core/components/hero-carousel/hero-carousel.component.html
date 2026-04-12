@@ -48,20 +48,41 @@
         >
           @for (slide of renderedSlides; track $index) {
             <section class="carousel-slide" aria-roledescription="slide">
-              <div class="carousel-status">
-                <span>{{ slide.eyebrow }}</span>
+              <div class="carousel-slide__content">
+                @if (slide.backgroundImageUrl) {
+                  <div
+                    class="carousel-slide__media-backdrop"
+                    [style.background-image]="'url(' + slide.backgroundImageUrl + ')'"
+                  ></div>
+                }
+
+                <div class="carousel-status">
+                  <span>{{ slide.eyebrow }}</span>
+                </div>
+
+                <div class="carousel-content">
+                  <h1>{{ slide.title }}</h1>
+                  <p class="hero-description">
+                    {{ slide.description }}
+                  </p>
+                </div>
+
+                <div class="carousel-stats">
+                  @for (stat of slide.stats; track stat) {
+                    <span>{{ stat }}</span>
+                  }
+                </div>
               </div>
 
-              <div class="carousel-content">
-                <h1>{{ slide.title }}</h1>
-                <p class="hero-description">
-                  {{ slide.description }}
-                </p>
-              </div>
-
-              <div class="carousel-stats">
-                @for (stat of slide.stats; track stat) {
-                  <span>{{ stat }}</span>
+              <div class="carousel-slide__media" aria-hidden="true">
+                @if (slide.backgroundImageUrl) {
+                  <img
+                    class="carousel-slide__image"
+                    [src]="slide.backgroundImageUrl"
+                    [alt]="slide.title"
+                    loading="lazy"
+                    draggable="false"
+                  />
                 }
               </div>
             </section>

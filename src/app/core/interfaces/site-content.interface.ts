@@ -8,6 +8,7 @@ export interface HeroSlide {
   title: string;
   description: string;
   stats: string[];
+  backgroundImageUrl?: string;
 }
 
 export interface FeatureCard {
