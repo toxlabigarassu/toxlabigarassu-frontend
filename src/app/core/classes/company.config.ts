@@ -4,6 +4,8 @@ export class CompanyConfig {
   static readonly data: CompanyContact = {
     title: 'TOXLAB IGARASSU',
     subtitle: 'EXAME TOXICOLÓGICO',
+    websiteUrl: 'https://www.toxlabigarassu.com.br',
+    socialImageUrl: '/assets/img/logo.png',
     whatsappLink:
       'https://wa.me/5581992819263?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20pre%C3%A7o%20promocional%20do%20exame%20toxicol%C3%B3gico.',
     phone: '(81) 99281-9263',
@@ -13,6 +15,15 @@ export class CompanyConfig {
       'https://www.instagram.com/toxlab_toxicologico?igsh=MXF1YjhjdWM5aDd0Yw==',
     mapEmbedUrl:
       'https://www.google.com/maps?q=AV.%20DUARTE%20COELHO%20130%20SALA%2004%20IGARASSU%20PE&output=embed',
+    mapSearchUrl:
+      'https://www.google.com/maps/search/?api=1&query=Av.+Duarte+Coelho+130+Sala+04+Centro+Igarassu+PE+53605030',
+    streetAddress: 'Av. Duarte Coelho 130, Sala 04',
+    neighborhood: 'Centro',
+    city: 'Igarassu',
+    state: 'PE',
+    postalCode: '53605-030',
+    latitude: -7.8338,
+    longitude: -34.9067,
     businessHours: [
       'Segunda a sexta das 08h às 16h',
       'Não fecha pra almoço em caso de agendamento antecipado',

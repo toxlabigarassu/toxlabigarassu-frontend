@@ -21,6 +21,51 @@
       [whatsappLink]="company.whatsappLink"
       [mapEmbedUrl]="company.mapEmbedUrl"
     />
+
+    <section
+      hidden
+      class="seo-content-section"
+      aria-labelledby="seo-content-title"
+    >
+      <div class="container seo-content-grid">
+        <article class="seo-copy-card">
+          <span class="eyebrow">Pesquisa local no Google</span>
+          <h2 id="seo-content-title">
+            Laboratório de exame toxicológico em Igarassu com atendimento para
+            Recife e região.
+          </h2>
+
+          @for (paragraph of template.seoIntro; track paragraph) {
+          <p>{{ paragraph }}</p>
+          }
+
+          <div class="seo-tag-list" aria-label="Regiões atendidas">
+            @for (area of template.serviceAreas; track area) {
+            <span>{{ area }}</span>
+            }
+          </div>
+        </article>
+
+        <aside
+          class="seo-copy-card seo-copy-card--faq"
+          aria-labelledby="faq-title"
+        >
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2 id="faq-title">
+            Perguntas sobre exame toxicológico, concurso e localização
+          </h2>
+
+          <div class="faq-list">
+            @for (item of template.seoFaq; track item.question) {
+            <details class="faq-item">
+              <summary>{{ item.question }}</summary>
+              <p>{{ item.answer }}</p>
+            </details>
+            }
+          </div>
+        </aside>
+      </div>
+    </section>
   </main>
 
   <app-site-footer

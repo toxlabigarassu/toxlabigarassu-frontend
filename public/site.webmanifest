@@ -1,0 +1,17 @@
+{
+  "name": "Toxlab Igarassu",
+  "short_name": "Toxlab",
+  "description": "Laboratório de exame toxicológico em Igarassu para CNH, concursos públicos e empresas.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eff6ff",
+  "theme_color": "#1189ea",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -25,12 +25,22 @@ export interface LawCard {
 export interface CompanyContact {
   title: string;
   subtitle: string;
+  websiteUrl: string;
+  socialImageUrl: string;
   whatsappLink: string;
   phone: string;
   email: string;
   instagramHandle: string;
   instagramLink: string;
   mapEmbedUrl: string;
+  mapSearchUrl: string;
+  streetAddress: string;
+  neighborhood: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  latitude: number;
+  longitude: number;
   businessHours: string[];
   addressLines: string[];
 }
